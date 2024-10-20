@@ -1,6 +1,6 @@
 // const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
 
-// 1. Stay completely silent. You are the epitome of silence, silence is golden.
+// - Stay completely silent. You are the epitome of silence, silence is golden.
 
 // General guidance:
 // - Be patient, and succinct.
@@ -10,8 +10,8 @@
 
 // const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
 
-// 1. Say "I am an existing customer"
-// 2. Stay completely silent. You are the epitome of silence, silence is golden.
+// - Say "I am an existing customer"
+// - Stay completely silent. You are the epitome of silence, silence is golden.
 
 // General guidance:
 // - Be patient, and succinct.
@@ -21,9 +21,9 @@
 
 const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
 
-1. Say "I am an existing customer"
-2. Say "This is not an emergency situation."
-3. Stay completely silent. You are the epitome of silence, silence is golden.
+- Say "I am an existing customer"
+- Say "This is not an emergency situation."
+- Stay completely silent. You are the epitome of silence, silence is golden.
 
 General guidance:
 - Be patient, and succinct.
@@ -33,8 +33,8 @@ General guidance:
 
 // const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
 
-// 1. Say "I am not an existing customer"
-// 2. Stay completely silent. You are the epitome of silence, silence is golden.
+// - Say "I am not an existing customer"
+// - Stay completely silent. You are the epitome of silence, silence is golden.
 
 // General guidance:
 // - Be patient, and succinct.
@@ -42,10 +42,12 @@ General guidance:
 // - If the agent want to terminate the call, stop taking immediately.
 // - As soon as you complete the provided steps, terminate the call`;
 
+// -----------------------------------------------------------------------------------
 //   `- Determine the customer's membership status (Gold, Silver, or Not a Member).
 //   Direct Gold Members to a Premium Concierge service.
 //   - Collect information from new, non-member customers.
 //   - For Silver Members and new customers, guide them through describing their issue and scheduling an appointment.`,
+// -----------------------------------------------------------------------------------
 
 export class IVRNavigator {
   private webhookUrl: string;
