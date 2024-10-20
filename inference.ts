@@ -89,8 +89,8 @@ export async function analyzeAudioRecording(
 
 async function main() {
   try {
-    // const audioFilePath = './snippets/existing_customer_not_an_emergency.wav';
-    const audioFilePath = './snippets/root.wav';
+    // const audioFilePath = './test_snippets/existing_customer_not_an_emergency.wav';
+    const audioFilePath = './test_snippets/root.wav';
     const result = await analyzeAudioRecording(audioFilePath);
     console.log(result);
   } catch (error) {

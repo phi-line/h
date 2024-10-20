@@ -1,0 +1,139 @@
+{
+  "question": "Are you an existing customer?",
+  "options": [
+    "Yes",
+    "No",
+    "Not sure"
+  ],
+  "callId": "cm2i6ao3s00g411nz1ietbzxo",
+  "children": {
+    "Yes": {
+      "question": "What kind of issue are you facing?",
+      "options": [
+        "Air Conditioning Problem",
+        "Plumbing Issue",
+        "Heating Problem",
+        "Maintenance Request"
+      ],
+      "callId": "cm2i6c0pq00g611nzo3s3w9ly",
+      "children": {
+        "Air Conditioning Problem": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Air conditioning problem",
+            "Plumbing issue",
+            "General Inquiry"
+          ],
+          "callId": "cm2i6ecbc00j3mqaiftguoi48",
+          "children": {
+            "Air conditioning problem": {
+              "question": "Are you an existing customer?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "callId": "cm2i6m4o900iwwe1y7etzer2l",
+              "children": {}
+            }
+          }
+        },
+        "Plumbing Issue": {
+          "question": "",
+          "options": [],
+          "callId": "cm2i6f6jx00ga11nz4in61fhp",
+          "children": {}
+        },
+        "Heating Problem": {
+          "question": "Is this an emergency?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2i6fzb400gc11nzs15ixs81",
+          "children": {}
+        },
+        "Maintenance Request": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Maintenance Request",
+            "Installation Query",
+            "Billing Inquiry"
+          ],
+          "callId": "cm2i6gnf300j5mqaielxip6y2",
+          "children": {}
+        }
+      }
+    },
+    "No": {
+      "question": "Could you please provide your name and physical address?",
+      "options": [
+        "John Doe, 123 Maple St, Springfield",
+        "Jane Smith, 456 Oak Ave, Centerville",
+        "Robert Brown, 789 Pine Blvd, Rivertown"
+      ],
+      "callId": "cm2i6csi200g811nztcik63d4",
+      "children": {
+        "John Doe, 123 Maple St, Springfield": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Air conditioning not cooling",
+            "Heater malfunction",
+            "Plumbing leak"
+          ],
+          "callId": "cm2i6hg9t00ge11nzjxpnp0dd",
+          "children": {}
+        },
+        "Jane Smith, 456 Oak Ave, Centerville": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Air Conditioning Problem",
+            "Plumbing Leak",
+            "General Inquiry"
+          ],
+          "callId": "cm2i6icmw00gg11nzchd7fyvn",
+          "children": {}
+        },
+        "Robert Brown, 789 Pine Blvd, Rivertown": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Air Conditioning Not Cooling",
+            "Plumbing Leak",
+            "Routine Maintenance"
+          ],
+          "callId": "cm2i6jbeg00iuwe1ypbkhwxej",
+          "children": {}
+        }
+      }
+    },
+    "Not sure": {
+      "question": "Is there anything else I can assist you with today?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "callId": "cm2i6dgk900j1mqaidbze67mz",
+      "children": {
+        "Yes": {
+          "question": "Could you please provide your name and physical address?",
+          "options": [
+            "John Doe, 1234 Elm Street, Springfield",
+            "Jane Smith, 5678 Oak Avenue, Rivertown",
+            "Michael Johnson, 9101 Pine Road, Lakeside"
+          ],
+          "callId": "cm2i6ka7600jpmqaibi71qf3x",
+          "children": {}
+        },
+        "No": {
+          "question": "Could you please provide your name and physical address?",
+          "options": [
+            "John Doe, 123 Main St, Springfield",
+            "Jane Smith, 456 Elm St, Rivertown",
+            "Michael Johnson, 789 Oak St, Lakeside"
+          ],
+          "callId": "cm2i6l49v00jrmqaiqzr4iym8",
+          "children": {}
+        }
+      }
+    }
+  }
+}

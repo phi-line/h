@@ -1,7 +1,8 @@
 /**
  * @fileoverview This module implements a DFS approach to navigate phone trees.
- * It handles the start of a navigation process, and handles the recordings requests
- * via webhooks.
+ * It handles the start of a navigation process, and processes recordings notifications
+ * via webhooks. It runs inference on those recordings to decide the next steps in the
+ * discovery process.
  *
  * @module recording
  */
@@ -70,8 +71,12 @@ async function router(req: Request): Promise<Response> {
             break;
           }
 
-          const nextStep = await analyzeAudioRecording(audioFilePath);
-          console.log('Got next discovery step', nextStep);
+          const inferenceResult = await analyzeAudioRecording(audioFilePath);
+          console.log('Got inference result', inferenceResult);
+
+          if (inferenceResult) {
+            await navigator.processInferenceResult(inferenceResult, body.id);
+          }
         } else {
           console.log(`Recording not available for ID: ${body.id}`);
         }

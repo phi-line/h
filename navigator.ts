@@ -1,12 +1,12 @@
-const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
+// const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
 
-- Stay completely silent. You are the epitome of silence, silence is golden.
+// - Stay completely silent. You are the epitome of silence, silence is golden.
 
-General guidance:
-- Be patient, and succinct.
-- Do not diverge from the steps. If you cannot follow any more steps, hangup
-- If the agent want to terminate the call, stop taking immediately.
-- As soon as you complete the provided steps, terminate the call`;
+// General guidance:
+// - Be patient, and succinct.
+// - Do not diverge from the steps. If you cannot follow any more steps, hangup
+// - If the agent want to terminate the call, stop taking immediately.
+// - As soon as you complete the provided steps, terminate the call`;
 
 // const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
 
@@ -49,23 +49,62 @@ General guidance:
 //   - For Silver Members and new customers, guide them through describing their issue and scheduling an appointment.`,
 // -----------------------------------------------------------------------------------
 
+import { IVRTree } from './ivrTree.ts';
+
 export class IVRNavigator {
   private webhookUrl: string;
   private hammingApiKey: string;
   private phoneNumber: string;
+  private tree: IVRTree;
+  private currentPath: string[];
 
   constructor(webhookUrl: string, hammingApiKey: string, phoneNumber: string) {
     this.webhookUrl = webhookUrl;
     this.phoneNumber = phoneNumber;
     this.hammingApiKey = hammingApiKey;
+    this.tree = new IVRTree();
+    this.currentPath = [];
   }
 
   async start() {
     console.log(`Starting IVR discovery for ${this.phoneNumber}`);
-    await this.initiateCall(rootPrompt);
+    await this.initiateCall();
   }
 
-  private async initiateCall(prompt?: string): Promise<string> {
+  private generatePrompt(): string {
+    const steps = this.currentPath.map((option, index) => {
+      const node = this.tree.getNode(this.currentPath.slice(0, index));
+      return `<question>"${node.question}"</question> <answer>"${option}"</answer>`;
+    });
+
+    const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You are not an assistant, you are a customer representative and do not generally ask questions. You will connect to an agent and follow the following steps:
+
+    - Stay completely silent. You are the epitome of silence, silence is golden.
+
+    General guidance:
+    - Be patient, and succinct.
+    - Do not diverge from the steps. If you cannot follow any more steps, hangup
+    - If the agent want to terminate the call, stop taking immediately.
+    - As soon as you complete the provided steps, terminate the call`;
+
+    const prompt = steps.length
+      ? `Your name is Angela Iverson and you will connect to a phone agent. Here are the questions you know the answers to:
+
+${steps.join('\n')}
+
+
+General guidance:
+- Be patient, and succinct.
+- Do not diverge from the steps. If you don't know the answer to a question, say "goodbye"
+- If the agent want to terminate the call, say "goodbye".
+- As soon as you complete the provided steps, terminate the call`
+      : rootPrompt;
+
+    return prompt;
+  }
+
+  private async initiateCall(): Promise<string> {
+    const prompt = this.generatePrompt();
     const body = {
       phone_number: this.phoneNumber,
       prompt,
@@ -119,5 +158,31 @@ export class IVRNavigator {
 
     console.log(`Recording saved to ${fileName}`);
     return fileName;
+  }
+
+  public async processInferenceResult(
+    result: {
+      question: string;
+      options: string[];
+    },
+    callId: string,
+  ) {
+    this.tree.addNode(
+      this.currentPath,
+      result.question,
+      result.options,
+      callId,
+    );
+    console.log('Updated IVR tree:');
+    this.tree.print();
+    this.tree.exportToJson(this.phoneNumber);
+
+    const nextPath = this.tree.getNextUnexploredPath();
+    if (nextPath) {
+      this.currentPath = nextPath;
+      await this.initiateCall();
+    } else {
+      console.log('IVR discovery complete. All paths explored.');
+    }
   }
 }

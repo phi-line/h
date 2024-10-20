@@ -60,6 +60,39 @@ $ deno run --allow-env --allow-read --allow-net inference.ts
 }
 ```
 
+I created a tree structure so that I can explore the IVR in a breadth first fashion. Here's the result of my first search through the example number provided:
+
+```
+Question: Are you an existing customer with us?
+Options: Yes, No
+  Yes:
+    Question: Is this an emergency?
+    Options: Yes, No
+      Yes:
+        Question:
+        Options:
+      No:
+        Question: What kind of issue are you facing?
+        Options: Heating issue, Cooling issue, Plumbing issue, General inquiry
+          Heating issue:
+            Question:
+            Options:
+  No:
+    Question: Is there anything else I can assist you with?
+    Options: Yes, I'd like more information about your services, No, that's all for now, Can I speak to a human representative?
+      Yes, I'd like more information about your services:
+        Question: Could you please provide your name and physical address first?
+        Options: John Doe, 123 Main St, Springfield, IL, Jane Smith, 456 Elm St, Burlington, VT, Mike Johnson, 789 Oak St, Dayton, OH
+      No, that's all for now:
+        Question:
+        Options:
+      Can I speak to a human representative?:
+        Question: May I have your name and physical address, please?
+        Options: John Doe, 123 Elm Street, Springfield, Jane Smith, 456 Maple Avenue, Centerville, Mike Johnson, 789 Oak Lane, River Town
+```
+
+While the main flow of the search was present, there were a few issues with the recordings as I was listening back to them. Our agents started to hallucinate more. It would interrupt frequently, leading to flakiness in the next results. I went back to the drawing board on various prompt alternatives to try and produce predictable results. I also ran into a case where the two agents were in a loop, both trying to end the call, but still awaiting each other's responses. I began searching for thr right prompt that would have the highest cohesion to the goal.
+
 # Setup
 
 ## Configure .env
