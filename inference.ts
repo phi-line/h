@@ -49,7 +49,7 @@ function parseXmlToJson(xmlString: string): parsedInference | null {
   };
 }
 
-async function analyzeAudioRecording(
+export async function analyzeAudioRecording(
   audioFilePath: string,
 ): Promise<parsedInference | null> {
   const client = new openai.OpenAI();

@@ -1,10 +1,12 @@
 {
   "tasks": {
-    "server": "deno run --allow-net --watch server.ts",
-    "test": "deno test --allow-net"
+    "server": "deno run --allow-env --allow-read --allow-write --allow-net --watch server.ts",
+    "inference": "deno run --allow-env --allow-read --allow-net inference.ts",
+    "discover": "deno test --allow-net"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1",
-    "@std/encoding": "jsr:@std/encoding@^1.0.5"
+    "@std/encoding": "jsr:@std/encoding@^1.0.5",
+    "@std/dotenv": "jsr:@std/dotenv"
   }
 }

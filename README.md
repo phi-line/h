@@ -70,7 +70,7 @@ Copy `.env.sample` to `.env`
 cp .env.sample .env
 ```
 
-Fill in `OPENAI_API_KEY`
+Fill in `OPENAI_API_KEY` and `HAMMING_API_KEY`
 
 ## Install and configure ngrok
 
@@ -82,10 +82,18 @@ Requires a configured ngrok setup for developer environment
 ngrok http 8000
 ```
 
-Grab the url and pass as `<webhook-url>`
+Grab the url and add to `.env` as `WEBHOOK_URL`
 
-## Run IVR Navigator
+## Run IVR Navigator Server
 
 ```
-deno run server --webhook <webhook-url> --hamming-api-key <hamming-api-key>
+deno run server
+```
+
+## Initiate IVR Navigation
+
+While the navigator server is running
+
+```
+deno run discover
 ```

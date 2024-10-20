@@ -5,11 +5,20 @@
  *
  * @module recording
  */
+import '@std/dotenv/load';
 
 import { IVRNavigator } from './navigator.ts';
+import { analyzeAudioRecording } from './inference.ts';
 
-let WEBHOOK_URL: string;
-let HAMMING_API_KEY: string;
+const WEBHOOK_URL = Deno.env.get('WEBHOOK_URL');
+const HAMMING_API_KEY = Deno.env.get('HAMMING_API_KEY');
+
+if (!WEBHOOK_URL || !HAMMING_API_KEY) {
+  throw new Error(
+    'Missing required environment variables: WEBHOOK_URL and/or HAMMING_API_KEY',
+  );
+}
+
 let navigator: IVRNavigator;
 
 interface RecordingWebhookRequest {
@@ -35,7 +44,7 @@ async function router(req: Request): Promise<Response> {
       });
     }
 
-    navigator = new IVRNavigator(WEBHOOK_URL, HAMMING_API_KEY, phoneNumber);
+    navigator = new IVRNavigator(WEBHOOK_URL!, HAMMING_API_KEY!, phoneNumber);
     navigator.start().catch(console.error);
 
     return new Response('IVR navigation started', { status: 200 });
@@ -44,6 +53,33 @@ async function router(req: Request): Promise<Response> {
   if (url.pathname === '/webhook' && req.method === 'POST') {
     const body = (await req.json()) as RecordingWebhookRequest;
     console.debug('Received webhook:', body);
+
+    switch (body.status) {
+      case 'event_phone_call_connected':
+        break;
+      case 'event_phone_call_ended':
+        break;
+      case 'event_recording':
+        if (body.recording_available) {
+          console.log(`Recording available for ID: ${body.id}`);
+          let audioFilePath;
+          try {
+            audioFilePath = await navigator.downloadRecording(body.id);
+          } catch (error) {
+            console.error(`Error downloading recording: ${error}`);
+            break;
+          }
+
+          const nextStep = await analyzeAudioRecording(audioFilePath);
+          console.log('Got next discovery step', nextStep);
+        } else {
+          console.log(`Recording not available for ID: ${body.id}`);
+        }
+        break;
+      default:
+        console.log(`Unhandled webhook status: ${body.status}`);
+    }
+
     return new Response('OK', { status: 200 });
   }
 
@@ -51,22 +87,5 @@ async function router(req: Request): Promise<Response> {
 }
 
 if (import.meta.main) {
-  const args = Deno.args;
-  if (
-    args.length < 4 ||
-    args[0] !== '--webhook' ||
-    args[2] !== '--hamming-api-key'
-  ) {
-    console.error(
-      'Usage: deno run navigate --webhook <webhook-url> --hamming-api-key <api-key>',
-    );
-    Deno.exit(1);
-  }
-
-  WEBHOOK_URL = args[1];
-  HAMMING_API_KEY = args[3];
-  console.log(`Webhook URL set to: ${WEBHOOK_URL}`);
-  console.log(`Hamming API Key set`);
-
   Deno.serve(router);
 }

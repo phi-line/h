@@ -3,6 +3,7 @@
   "specifiers": {
     "jsr:@b-fuze/deno-dom@*": "0.1.48",
     "jsr:@std/assert@1": "1.0.6",
+    "jsr:@std/dotenv@*": "0.225.2",
     "jsr:@std/encoding@^1.0.5": "1.0.5",
     "jsr:@std/internal@^1.0.4": "1.0.4",
     "npm:openai@4.68.1": "4.68.1"
@@ -16,6 +17,9 @@
       "dependencies": [
         "jsr:@std/internal"
       ]
+    },
+    "@std/dotenv@0.225.2": {
+      "integrity": "e2025dce4de6c7bca21dece8baddd4262b09d5187217e231b033e088e0c4dd23"
     },
     "@std/encoding@1.0.5": {
       "integrity": "ecf363d4fc25bd85bd915ff6733a7e79b67e0e7806334af15f4645c569fefc04"
@@ -154,6 +158,7 @@
   "workspace": {
     "dependencies": [
       "jsr:@std/assert@1",
+      "jsr:@std/dotenv@*",
       "jsr:@std/encoding@^1.0.5"
     ]
   }
