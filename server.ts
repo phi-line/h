@@ -76,6 +76,8 @@ async function router(req: Request): Promise<Response> {
 
           if (inferenceResult) {
             await navigator.processInferenceResult(inferenceResult, body.id);
+          } else {
+            await navigator.exploreNextPath();
           }
         } else {
           console.log(`Recording not available for ID: ${body.id}`);

@@ -1,3 +1,4 @@
 *.wav
 *.env
 !example_snippets/*
+.DS_Store

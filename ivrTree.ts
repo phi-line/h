@@ -3,10 +3,12 @@ interface IVRNode {
   options: string[];
   callId: string;
   children: Map<string, IVRNode>;
+  isTerminal?: boolean;
 }
 
 export class IVRTree {
   private root: IVRNode;
+  private exploredPaths: Set<string>;
 
   constructor() {
     this.root = {
@@ -15,6 +17,7 @@ export class IVRTree {
       callId: '',
       children: new Map(),
     };
+    this.exploredPaths = new Set();
   }
 
   addNode(
@@ -40,6 +43,8 @@ export class IVRTree {
     currentNode.question = question;
     currentNode.options = options;
     currentNode.callId = callId;
+
+    this.exploredPaths.add(this.pathToString(path, question));
   }
 
   getNode(path: string[]): IVRNode {
@@ -55,26 +60,52 @@ export class IVRTree {
     return currentNode;
   }
 
+  markNodeAsTerminal(path: string[]): void {
+    const node = this.getNode(path);
+    node.isTerminal = true;
+  }
+
   getNextUnexploredPath(): string[] | null {
     const queue: [IVRNode, string[]][] = [[this.root, []]];
 
     while (queue.length > 0) {
       const [node, path] = queue.shift()!;
 
+      if (node.isTerminal) {
+        continue;
+      }
+
       for (const option of node.options) {
+        const newPath = [...path, option];
         if (!node.children.has(option)) {
-          return [...path, option];
+          // Check if this new path leads to a previously seen state
+          if (!this.isPathExplored(newPath, node.question)) {
+            return newPath;
+          }
+        } else {
+          queue.push([node.children.get(option)!, newPath]);
         }
-        queue.push([node.children.get(option)!, [...path, option]]);
       }
     }
 
     return null; // All paths explored
   }
 
+  private pathToString(path: string[], question: string): string {
+    return `${path.join('->')}:${question}`;
+  }
+
+  private isPathExplored(path: string[], question: string): boolean {
+    return this.exploredPaths.has(this.pathToString(path, question));
+  }
+
   print(): void {
     const printNode = (node: IVRNode, indent: string = '') => {
-      console.log(`${indent}Question: ${node.question}`);
+      console.log(
+        `${indent}Question: ${node.question}${
+          node.isTerminal ? ' (TERMINAL)' : ''
+        }`,
+      );
       console.log(`${indent}Options: ${node.options.join(', ')}`);
       node.children.forEach((child, option) => {
         console.log(`${indent}  ${option}:`);

@@ -1,54 +1,3 @@
-// const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
-
-// - Stay completely silent. You are the epitome of silence, silence is golden.
-
-// General guidance:
-// - Be patient, and succinct.
-// - Do not diverge from the steps. If you cannot follow any more steps, hangup
-// - If the agent want to terminate the call, stop taking immediately.
-// - As soon as you complete the provided steps, terminate the call`;
-
-// const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
-
-// - Say "I am an existing customer"
-// - Stay completely silent. You are the epitome of silence, silence is golden.
-
-// General guidance:
-// - Be patient, and succinct.
-// - Do not diverge from the steps. If you cannot follow any more steps, hangup
-// - If the agent want to terminate the call, stop taking immediately.
-// - As soon as you complete the provided steps, terminate the call`;
-
-// const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
-
-// - Say "I am an existing customer"
-// - Say "This is not an emergency situation."
-// - Stay completely silent. You are the epitome of silence, silence is golden.
-
-// General guidance:
-// - Be patient, and succinct.
-// - Do not diverge from the steps. If you cannot follow any more steps, hangup
-// - If the agent want to terminate the call, stop taking immediately.
-// - As soon as you complete the provided steps, terminate the call`;
-
-// const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You will connect to an agent and follow the following steps:
-
-// - Say "I am not an existing customer"
-// - Stay completely silent. You are the epitome of silence, silence is golden.
-
-// General guidance:
-// - Be patient, and succinct.
-// - Do not diverge from the steps. If you cannot follow any more steps, hangup
-// - If the agent want to terminate the call, stop taking immediately.
-// - As soon as you complete the provided steps, terminate the call`;
-
-// -----------------------------------------------------------------------------------
-//   `- Determine the customer's membership status (Gold, Silver, or Not a Member).
-//   Direct Gold Members to a Premium Concierge service.
-//   - Collect information from new, non-member customers.
-//   - For Silver Members and new customers, guide them through describing their issue and scheduling an appointment.`,
-// -----------------------------------------------------------------------------------
-
 import { IVRTree } from './ivrTree.ts';
 
 export class IVRNavigator {
@@ -72,10 +21,22 @@ export class IVRNavigator {
   }
 
   private generatePrompt(): string {
-    const steps = this.currentPath.map((option, index) => {
-      const node = this.tree.getNode(this.currentPath.slice(0, index));
-      return `<question>"${node.question}"</question> <answer>"${option}"</answer>`;
-    });
+    const steps = this.currentPath
+      .reduce((acc, option, index) => {
+        const node = this.tree.getNode(this.currentPath.slice(0, index));
+        if (index === 0 || node.question !== acc[acc.length - 1].question) {
+          acc.push({ question: node.question, answer: option });
+        } else {
+          acc[acc.length - 1].answer = option;
+        }
+        return acc;
+      }, [] as { question: string; answer: string }[])
+      .map(
+        ({ question, answer }) =>
+          `<question>"${question}"</question> <answer>"${answer}"</answer>`,
+      );
+
+    console.log(`Current path`, this.currentPath);
 
     const rootPrompt = `Do not reveal that you are a language model. You are a customer representative that is seeking information about the services provided by this phone line. You are not an assistant, you are a customer representative and do not generally ask questions. You will connect to an agent and follow the following steps:
 
@@ -88,16 +49,16 @@ export class IVRNavigator {
     - As soon as you complete the provided steps, terminate the call`;
 
     const prompt = steps.length
-      ? `Your name is Angela Iverson and you will connect to a phone agent. Here are the questions you know the answers to:
+      ? `Your name is Angela Iverson - 1234 Bay Street Oakland, CA 94105
+
+Here are the questions you know the answers to:
 
 ${steps.join('\n')}
 
-
 General guidance:
 - Be patient, and succinct.
-- Do not diverge from the steps. If you don't know the answer to a question, say "goodbye"
-- If the agent want to terminate the call, say "goodbye".
-- As soon as you complete the provided steps, terminate the call`
+- Do not diverge from the questions. If you don't know the answer to a question, say "goodbye"
+- If the agent want to terminate the call, say "goodbye"`
       : rootPrompt;
 
     return prompt;
@@ -177,6 +138,10 @@ General guidance:
     this.tree.print();
     this.tree.exportToJson(this.phoneNumber);
 
+    await this.exploreNextPath();
+  }
+
+  public async exploreNextPath() {
     const nextPath = this.tree.getNextUnexploredPath();
     if (nextPath) {
       this.currentPath = nextPath;

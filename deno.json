@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "server": "deno run --allow-env --allow-read --allow-write --allow-net --watch server.ts",
+    "dev": "deno run --allow-env --allow-read --allow-write --allow-net --watch server.ts",
+    "server": "deno run --allow-env --allow-read --allow-write --allow-net server.ts",
     "inference": "deno run --allow-env --allow-read --allow-net inference.ts",
     "discover": "deno test --allow-net"
   },
