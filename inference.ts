@@ -1,11 +1,19 @@
+/**
+ * @fileoverview This module provides functions to analyze audio recordings by transcribing them, creating inference prompts with those transcripts, and parsing inference XML responses into JSON format.
+ */
+
 import '@std/dotenv/load';
 import openai from 'npm:openai@4.68.1';
 import { DOMParser, Element } from 'jsr:@b-fuze/deno-dom';
 import { encodeBase64 } from '@std/encoding/base64';
 import { Utterance, getTranscriptionFromDeepgram } from './transcribe.ts';
 
+/**
+ * Generates a script from an array of utterances.
+ * @param {Utterance[]} utterances - The array of utterances to convert into a script.
+ * @returns {string} The generated script in XML format.
+ */
 function generateScriptFromUtterances(utterances: Utterance[]): string {
-  //   console.log(utterances);
   const scriptContent = utterances
     .map((utterance) => {
       const speaker = utterance.channel === 0 ? 'agent' : 'customer';
@@ -16,6 +24,11 @@ function generateScriptFromUtterances(utterances: Utterance[]): string {
   return `<script>\n${scriptContent}\n</script>`;
 }
 
+/**
+ * Creates an inference prompt using the provided memory.
+ * @param {string} memory - The memory string to be included in the prompt.
+ * @returns {string} The formatted inference prompt.
+ */
 function createInferencePrompt(memory: string): string {
   return `Your Memory:
   -  ${memory}
@@ -33,11 +46,20 @@ function createInferencePrompt(memory: string): string {
   - Format your result as a series of XML tags <res> <ques></ques> <opt></opt> <opt></opt> </res>`;
 }
 
+/**
+ * Interface representing the parsed inference result.
+ * @interface
+ */
 interface parsedInference {
   question: string;
   options: string[];
 }
 
+/**
+ * Parses an XML string into a JSON object representing the inference.
+ * @param {string} xmlString - The XML string to parse.
+ * @returns {parsedInference | null} The parsed inference object or null if parsing fails.
+ */
 function parseXmlToJson(xmlString: string): parsedInference | null {
   const xmlContentCleaned = xmlString
     .replace(/[\s\S]*?(<res>[\s\S]*?<\/res>)[\s\S]*/i, '$1')
@@ -67,6 +89,12 @@ function parseXmlToJson(xmlString: string): parsedInference | null {
   };
 }
 
+/**
+ * Analyzes an audio recording by transcribing it and generating an inference.
+ * @param {string} audioFilePath - The path to the audio file to analyze.
+ * @param {string} agentPrePrompt - The pre-prompt information for the agent.
+ * @returns {Promise<parsedInference | null>} The parsed inference result or null if analysis fails.
+ */
 export async function analyzeAudioRecording(
   audioFilePath: string,
   agentPrePrompt: string,
@@ -119,6 +147,9 @@ export async function analyzeAudioRecording(
   return parseXmlToJson(xmlContent);
 }
 
+/**
+ * Main function to execute the audio analysis.
+ */
 async function main() {
   try {
     // const audioFilePath = './example_snippets/existing_customer_not_an_emergency.wav';

@@ -3,6 +3,10 @@ import { walk } from '@std/fs/walk';
 
 const DEEPGRAM_API_KEY = Deno.env.get('DEEPGRAM_API_KEY');
 
+/**
+ * Represents an utterance in the transcription.
+ * @interface
+ */
 export interface Utterance {
   start: number;
   end: number;
@@ -18,6 +22,9 @@ export interface Utterance {
   id: string;
 }
 
+/**
+ * Represents the response from the Deepgram API.
+ */
 export type DeepgramResponse = {
   metadata: {
     transaction_key: string;
@@ -52,6 +59,12 @@ export type DeepgramResponse = {
   };
 };
 
+/**
+ * Fetches the transcription from Deepgram for a given audio file.
+ * @param {string} audioFilePath - The path to the audio file.
+ * @returns {Promise<DeepgramResponse>} The transcription response from Deepgram.
+ * @throws Will throw an error if the transcription request fails.
+ */
 export async function getTranscriptionFromDeepgram(
   audioFilePath: string,
 ): Promise<DeepgramResponse> {
@@ -76,6 +89,11 @@ export async function getTranscriptionFromDeepgram(
   return data;
 }
 
+/**
+ * Main function to process audio files and get transcriptions.
+ * Loads existing results from a JSON file or processes new audio files.
+ * Saves the results to a JSON file.
+ */
 async function main() {
   try {
     let results: { [key: string]: DeepgramResponse } = {};

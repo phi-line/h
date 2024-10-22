@@ -22,17 +22,36 @@ if (!WEBHOOK_URL || !HAMMING_API_KEY) {
 
 let navigator: IVRNavigator;
 
+/**
+ * Represents a request from the recording webhook.
+ * @interface
+ */
 interface RecordingWebhookRequest {
+  /** The unique identifier for the recording. */
   id: string;
+  /** The status of the webhook event. */
   status: string;
+  /** Indicates if the recording is available. */
   recording_available: boolean;
 }
 
+/**
+ * Represents a request to navigate.
+ * @interface
+ */
 interface NavigateRequest {
+  /** The phone number to navigate. */
   phoneNumber: string;
+  /** The pre-prompt for the agent. */
   agentPrePrompt: string;
 }
 
+/**
+ * Handles incoming HTTP requests and routes them to the appropriate handler.
+ *
+ * @param {Request} req - The incoming HTTP request.
+ * @returns {Promise<Response>} The HTTP response.
+ */
 async function router(req: Request): Promise<Response> {
   const url = new URL(req.url);
 
