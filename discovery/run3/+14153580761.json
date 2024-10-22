@@ -1,0 +1,200 @@
+{
+  "question": "Are you an existing customer?",
+  "options": [
+    "Yes",
+    "No"
+  ],
+  "callId": "cm2jk3ax100x911nzr9094s0w",
+  "children": {
+    "No": {
+      "question": "Is this an emergency?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "callId": "cm2jk4mlg010gwe1yo5h388m8",
+      "children": {
+        "No": {
+          "question": "Do you have any",
+          "options": [
+            "Air conditioning issues",
+            "Plumbing issues",
+            "Other"
+          ],
+          "callId": "cm2jkaqma00xp11nzwxqlpqw7",
+          "children": {
+            "Other": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Air conditioning problem",
+                "Plumbing problem",
+                "Other"
+              ],
+              "callId": "cm2jkrncy012hmqai01svjf55",
+              "children": {}
+            },
+            "Plumbing issues": {
+              "question": "Is this an emergency?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "callId": "cm2jksv2r012jmqai1rnnzpja",
+              "children": {}
+            },
+            "Air conditioning issues": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Plumbing issues",
+                "Air conditioning issues",
+                "Heating issues"
+              ],
+              "callId": "cm2jku4be0116we1yatj7mjqa",
+              "children": {}
+            }
+          }
+        },
+        "Yes": {
+          "question": "Is this an emergency situation?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2jkdgdq00xu11nz676ef1bn",
+          "children": {
+            "No": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Air Conditioning",
+                "Plumbing",
+                "Heating"
+              ],
+              "callId": "cm2jkemna010swe1yoqcpo91g",
+              "children": {
+                "Heating": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2jkomim012dmqaima4yzrzj",
+                  "children": {}
+                },
+                "Plumbing": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2jkphjw0114we1yolxyptpk",
+                  "children": {}
+                },
+                "Air Conditioning": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2jkql9w012fmqail2veja6f",
+                  "children": {}
+                }
+              }
+            },
+            "Yes": {
+              "question": "Is this an emergency?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "callId": "cm2jkfy6s010uwe1yx4k06vqn",
+              "children": {
+                "No": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2jkh1qf010wwe1ywxu74zh3",
+                  "children": {}
+                },
+                "Yes": {
+                  "question": "Is this an emergency situation?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2jki30d00xw11nzsnno01y2",
+                  "children": {
+                    "No": {
+                      "question": "Is this an emergency situation?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2jkj6w500xy11nzjc71m9ow",
+                      "children": {}
+                    },
+                    "Yes": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2jkk98000y011nzzgth2u6v",
+                      "children": {
+                        "No": {
+                          "question": "",
+                          "options": [],
+                          "callId": "cm2jklb4s00y211nzpzqxls62",
+                          "children": {}
+                        },
+                        "Yes": {
+                          "question": "Is this an emergency?",
+                          "options": [
+                            "Yes",
+                            "No"
+                          ],
+                          "callId": "cm2jkmih100y411nzj84lueek",
+                          "children": {}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Yes": {
+      "question": "What kind of issue are you facing?",
+      "options": [
+        "Air Conditioning issue",
+        "Heating issue",
+        "Plumbing issue",
+        "Other"
+      ],
+      "callId": "cm2jk5y3k010iwe1yfx9m8xe5",
+      "children": {
+        "Other": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Air Conditioning",
+            "Plumbing",
+            "Heating",
+            "Other"
+          ],
+          "callId": "cm2jk6yqo00xb11nz5nerxqqg",
+          "children": {}
+        },
+        "Plumbing issue": {
+          "question": "",
+          "options": [],
+          "callId": "cm2jk7wv4011umqai0887thuw",
+          "children": {}
+        },
+        "Heating issue": {
+          "question": "",
+          "options": [],
+          "callId": "cm2jk8qrh011wmqai5nmqmkuc",
+          "children": {}
+        },
+        "Air Conditioning issue": {
+          "question": "",
+          "options": [],
+          "callId": "cm2jk9vbd010qwe1yg8cjkp0x",
+          "children": {}
+        }
+      }
+    }
+  }
+}

@@ -119,7 +119,7 @@ export class IVRTree {
   exportToJson(phoneNumber: string): void {
     const jsonData = JSON.stringify(
       this.root,
-      (key, value) => {
+      (_, value) => {
         if (value instanceof Map) {
           return Object.fromEntries(value);
         }

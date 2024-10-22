@@ -5,7 +5,9 @@
     "jsr:@std/assert@1": "1.0.6",
     "jsr:@std/dotenv@*": "0.225.2",
     "jsr:@std/encoding@^1.0.5": "1.0.5",
+    "jsr:@std/fs@^1.0.4": "1.0.4",
     "jsr:@std/internal@^1.0.4": "1.0.4",
+    "jsr:@std/path@^1.0.6": "1.0.6",
     "npm:openai@4.68.1": "4.68.1"
   },
   "jsr": {
@@ -24,8 +26,17 @@
     "@std/encoding@1.0.5": {
       "integrity": "ecf363d4fc25bd85bd915ff6733a7e79b67e0e7806334af15f4645c569fefc04"
     },
+    "@std/fs@1.0.4": {
+      "integrity": "2907d32d8d1d9e540588fd5fe0ec21ee638134bd51df327ad4e443aaef07123c",
+      "dependencies": [
+        "jsr:@std/path"
+      ]
+    },
     "@std/internal@1.0.4": {
       "integrity": "62e8e4911527e5e4f307741a795c0b0a9e6958d0b3790716ae71ce085f755422"
+    },
+    "@std/path@1.0.6": {
+      "integrity": "ab2c55f902b380cf28e0eec501b4906e4c1960d13f00e11cfbcd21de15f18fed"
     }
   },
   "npm": {
@@ -159,7 +170,8 @@
     "dependencies": [
       "jsr:@std/assert@1",
       "jsr:@std/dotenv@*",
-      "jsr:@std/encoding@^1.0.5"
+      "jsr:@std/encoding@^1.0.5",
+      "jsr:@std/fs@^1.0.4"
     ]
   }
 }

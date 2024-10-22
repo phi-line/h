@@ -49,7 +49,7 @@ export class IVRNavigator {
     - As soon as you complete the provided steps, terminate the call`;
 
     const prompt = steps.length
-      ? `Your name is Angela Iverson - 1234 Bay Street Oakland, CA 94105
+      ? `Your name is Angela Iverson - 1234 Bay Street Oakland, CA 94105.
 
 Here are the questions you know the answers to:
 
@@ -57,7 +57,7 @@ ${steps.join('\n')}
 
 General guidance:
 - Be patient, and succinct.
-- Do not diverge from the questions. If you don't know the answer to a question, say "goodbye"
+- Do not diverge from the questions you know the answers to. The goal is to get to the end state, so if you need to navigate on your own, act within reason.
 - If the agent want to terminate the call, say "goodbye"`
       : rootPrompt;
 

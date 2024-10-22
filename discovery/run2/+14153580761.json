@@ -1,0 +1,131 @@
+{
+  "question": "Are you an existing customer with us?",
+  "options": [
+    "Yes",
+    "No",
+    "Not Sure"
+  ],
+  "callId": "cm2jjbq6z011cmqaidskepsn2",
+  "children": {
+    "Not Sure": {
+      "question": "Is this an emergency situation?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "callId": "cm2jjdzq20104we1yl4ukabil",
+      "children": {}
+    },
+    "No": {
+      "question": "Is this an emergency?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "callId": "cm2jjez08011emqaiwhb01vt3",
+      "children": {}
+    },
+    "Yes": {
+      "question": "Is this an emergency?",
+      "options": [
+        "Yes",
+        "No",
+        "Not sure"
+      ],
+      "callId": "cm2jjg26w00wj11nz9tkcda63",
+      "children": {
+        "Not sure": {
+          "question": "Could you please describe the issue you're facing?",
+          "options": [
+            "No air conditioning",
+            "Plumbing leak",
+            "Heating not working"
+          ],
+          "callId": "cm2jjgoxo00wl11nz28nsiyfo",
+          "children": {}
+        },
+        "No": {
+          "question": "What kind of issue are you experiencing?",
+          "options": [
+            "Air Conditioning Problem",
+            "Plumbing Issue",
+            "General Inquiry"
+          ],
+          "callId": "cm2jjhevj00wn11nzy9m2qeo2",
+          "children": {}
+        },
+        "Yes": {
+          "question": "Is this an emergency situation?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2jji60w00wp11nzh1yls00a",
+          "children": {
+            "No": {
+              "question": "Is this an emergency?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "callId": "cm2jjj4n3011gmqaiom6jgtce",
+              "children": {
+                "No": {
+                  "question": "Could you please let me know what kind of issue you are facing?",
+                  "options": [
+                    "Air conditioning not cooling",
+                    "Plumbing leak",
+                    "Furnace malfunction"
+                  ],
+                  "callId": "cm2jjkliu00wx11nzjcfn6vtk",
+                  "children": {
+                    "Furnace malfunction": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2jjmf4j011kmqaifvis4lfk",
+                      "children": {}
+                    },
+                    "Plumbing leak": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Air conditioning problem",
+                        "Plumbing leak",
+                        "Heating system issue"
+                      ],
+                      "callId": "cm2jjn98d010cwe1yh16bi9ps",
+                      "children": {}
+                    },
+                    "Air conditioning not cooling": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2jjo8q7010ewe1yajrpszz7",
+                      "children": {}
+                    }
+                  }
+                },
+                "Yes": {
+                  "question": "Is this an emergency?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2jjlivh00wz11nzktnaxhu6",
+                  "children": {}
+                }
+              }
+            },
+            "Yes": {
+              "question": "",
+              "options": [],
+              "callId": "cm2jjjvav011imqair8lyuhgw",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

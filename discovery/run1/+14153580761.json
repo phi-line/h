@@ -1,0 +1,1343 @@
+{
+  "question": "Are you an existing customer with us?",
+  "options": [
+    "Yes",
+    "No",
+    "I'm not sure"
+  ],
+  "callId": "cm2i9vix800mgwe1y224g1ewn",
+  "children": {
+    "Yes": {
+      "question": "What kind of issue are you facing?",
+      "options": [
+        "Plumbing",
+        "Air Conditioning",
+        "Other"
+      ],
+      "callId": "cm2i9wtm000n6mqaiwtq1ioiq",
+      "children": {
+        "Plumbing": {
+          "question": "Is this an emergency situation?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2i9zmnl00miwe1ysa7lztkr",
+          "children": {
+            "Yes": {
+              "question": "Is this an emergency?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "callId": "cm2ia9l0b00nimqaieseeg56k",
+              "children": {
+                "Yes": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2ib2ifq00newe1ytlabezkc",
+                  "children": {}
+                },
+                "No": {
+                  "question": "Are you an existing customer?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2ib37e100o0mqai2c5bc797",
+                  "children": {
+                    "Yes": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2icstpp00la11nzvgrbr24y",
+                      "children": {}
+                    },
+                    "No": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2ictkej00pfmqaioauho67l",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "No": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Plumbing",
+                "Air Conditioning",
+                "Electrical"
+              ],
+              "callId": "cm2iaa94300mswe1yehzbaear",
+              "children": {
+                "Plumbing": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Air Conditioning",
+                    "Heating",
+                    "Plumbing"
+                  ],
+                  "callId": "cm2ib3t1s00ngwe1yvpcm9lkj",
+                  "children": {
+                    "Air Conditioning": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2icu9cu00phmqaickqdsrt3",
+                      "children": {}
+                    },
+                    "Heating": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Heating",
+                        "Cooling",
+                        "Plumbing"
+                      ],
+                      "callId": "cm2icvb2a00lc11nzt5y4vwor",
+                      "children": {}
+                    },
+                    "Plumbing": {
+                      "question": "What type of issue are you facing?",
+                      "options": [
+                        "Plumbing",
+                        "Heating",
+                        "Cooling"
+                      ],
+                      "callId": "cm2icwvqx00pjmqaia13kqkoz",
+                      "children": {}
+                    }
+                  }
+                },
+                "Air Conditioning": {
+                  "question": "Is this an emergency?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2ib4mrj00niwe1yty86gdyj",
+                  "children": {
+                    "Yes": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2icyker00li11nzhvx4crwk",
+                      "children": {}
+                    },
+                    "No": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Air conditioning",
+                        "Plumbing",
+                        "Heating"
+                      ],
+                      "callId": "cm2icza5e00orwe1y7cedxsbb",
+                      "children": {}
+                    }
+                  }
+                },
+                "Electrical": {
+                  "question": "Could you please let me know what kind of issue you are facing?",
+                  "options": [
+                    "Plumbing",
+                    "Heating",
+                    "Air Conditioning"
+                  ],
+                  "callId": "cm2ib5hdq00o2mqaicwp2qgyk",
+                  "children": {
+                    "Plumbing": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2id04jy00lk11nzyp6bmv4l",
+                      "children": {}
+                    },
+                    "Heating": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2id15e000plmqaixv009h3i",
+                      "children": {}
+                    },
+                    "Air Conditioning": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Heating",
+                        "Cooling",
+                        "Plumbing"
+                      ],
+                      "callId": "cm2id1xhi00pnmqaivt1gwi7x",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Air Conditioning": {
+          "question": "Is this an emergency?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2ia0eqq00mkwe1y45ofltu7",
+          "children": {
+            "Yes": {
+              "question": "Is this an emergency?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "callId": "cm2iab62800muwe1yuzmzm3kk",
+              "children": {
+                "Yes": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2ib6ebr00k011nz3cjcbhec",
+                  "children": {}
+                },
+                "No": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Air Conditioning",
+                    "Plumbing",
+                    "Heating"
+                  ],
+                  "callId": "cm2ib8wk200nswe1yi18ckuel",
+                  "children": {
+                    "Air Conditioning": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2id3q7o00ozwe1ysn5ervnr",
+                      "children": {}
+                    },
+                    "Plumbing": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Air conditioning issue",
+                        "Plumbing issue"
+                      ],
+                      "callId": "cm2id4lkl00pxmqaiw7btgzwz",
+                      "children": {}
+                    },
+                    "Heating": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Heating",
+                        "Cooling",
+                        "Plumbing",
+                        "General Inquiry"
+                      ],
+                      "callId": "cm2id5ivs00lm11nznd9hku58",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "No": {
+              "question": "",
+              "options": [],
+              "callId": "cm2iabt0t00ja11nzqrln9cd3",
+              "children": {}
+            }
+          }
+        },
+        "Other": {
+          "question": "Is this an emergency?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2ia1p0f00namqaipr88enob",
+          "children": {
+            "Yes": {
+              "question": "Is this an emergency?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "callId": "cm2iacpms00mwwe1y9r5jlg9k",
+              "children": {
+                "Yes": {
+                  "question": "Is this an emergency?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2ib9roo00o6mqaidvsa686h",
+                  "children": {
+                    "Yes": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2id6nko00lo11nz0mtq6c83",
+                      "children": {}
+                    },
+                    "No": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Heating",
+                        "Cooling",
+                        "Plumbing",
+                        "Other"
+                      ],
+                      "callId": "cm2id7euj00pzmqaiejnn11yf",
+                      "children": {}
+                    }
+                  }
+                },
+                "No": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "AC malfunction",
+                    "Plumbing leak",
+                    "Heating issue",
+                    "Other"
+                  ],
+                  "callId": "cm2ibamvn00o8mqai83tik1yy",
+                  "children": {
+                    "AC malfunction": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "AC malfunction",
+                        "Plumbing leak",
+                        "Heater issue"
+                      ],
+                      "callId": "cm2id8f3700p1we1ytqs65jzh",
+                      "children": {}
+                    },
+                    "Plumbing leak": {
+                      "question": "Are you an existing customer with us?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2id9bng00q1mqaibvdimkhx",
+                      "children": {}
+                    },
+                    "Heating issue": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Heating issue",
+                        "Cooling issue",
+                        "Plumbing issue",
+                        "Other"
+                      ],
+                      "callId": "cm2idbrka00ls11nzounz3rsl",
+                      "children": {}
+                    },
+                    "Other": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2idcn3f00q5mqailesidko6",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "No": {
+              "question": "",
+              "options": [],
+              "callId": "cm2iadgtz00jc11nzl6bckzsr",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "No": {
+      "question": "Could you please let me know what kind of issue you are facing?",
+      "options": [
+        "Air conditioning not working",
+        "Plumbing issue",
+        "Scheduled maintenance",
+        "Other"
+      ],
+      "callId": "cm2i9xi7900n8mqaiabewqhqg",
+      "children": {
+        "Air conditioning not working": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Air conditioning not working",
+            "Plumbing issue",
+            "Heating not working"
+          ],
+          "callId": "cm2ia2a2y00mowe1y2fm9fihw",
+          "children": {
+            "Air conditioning not working": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Air conditioning not working"
+              ],
+              "callId": "cm2iae8pj00nkmqaiebzi0s5b",
+              "children": {
+                "Air conditioning not working": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2ibbgyj00obmqai6seabb5i",
+                  "children": {}
+                }
+              }
+            },
+            "Plumbing issue": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Plumbing issue",
+                "Air conditioning issue",
+                "Other"
+              ],
+              "callId": "cm2iafi0h00mywe1yhls3aif6",
+              "children": {
+                "Plumbing issue": {
+                  "question": "Is this an emergency?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2ibcwox00nuwe1y56sjsacj",
+                  "children": {
+                    "Yes": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2iddewz00qdmqaic2as2soy",
+                      "children": {}
+                    },
+                    "No": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2idfnq700qhmqaisosak4zq",
+                      "children": {}
+                    }
+                  }
+                },
+                "Air conditioning issue": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Air conditioning not working",
+                    "Plumbing issue, such as a leak or clog",
+                    "Other"
+                  ],
+                  "callId": "cm2ibfayh00nwwe1y7z722fft",
+                  "children": {
+                    "Air conditioning not working": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2idgswq00pkwe1ygy1z6ham",
+                      "children": {}
+                    },
+                    "Plumbing issue, such as a leak or clog": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Air conditioning not working",
+                        "Plumbing problem",
+                        "Other"
+                      ],
+                      "callId": "cm2idi0m200ly11nza8f71drz",
+                      "children": {}
+                    },
+                    "Other": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes, my air conditioning is not working.",
+                        "No, it can wait."
+                      ],
+                      "callId": "cm2idlgg600qnmqaic9bt4848",
+                      "children": {}
+                    }
+                  }
+                },
+                "Other": {
+                  "question": "Is this an emergency?",
+                  "options": [
+                    "Yes, my air conditioning is not working",
+                    "No, this is not an emergency"
+                  ],
+                  "callId": "cm2ibglt900kb11nzl46tlmja",
+                  "children": {
+                    "Yes, my air conditioning is not working": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2idmmas00m311nz3ss0q6vs",
+                      "children": {}
+                    },
+                    "No, this is not an emergency": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2idnnka00pswe1yo4n99j7n",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "Heating not working": {
+              "question": "",
+              "options": [],
+              "callId": "cm2iagphh00n0we1yhpgs00se",
+              "children": {}
+            }
+          }
+        },
+        "Plumbing issue": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Plumbing",
+            "Air Conditioning",
+            "General Inquiry"
+          ],
+          "callId": "cm2ia3ja300ncmqaijvuk4t5w",
+          "children": {
+            "Plumbing": {
+              "question": "Could you please provide your physical address?",
+              "options": [
+                "123 Main Street",
+                "456 Elm Avenue",
+                "789 Maple Drive"
+              ],
+              "callId": "cm2iahhcv00jk11nzgamkvgwy",
+              "children": {
+                "123 Main Street": {
+                  "question": "Is this an emergency?",
+                  "options": [
+                    "Yes, it is an emergency.",
+                    "No, it is not an emergency."
+                  ],
+                  "callId": "cm2ibhz2c00kd11nzsqeg5xpl",
+                  "children": {
+                    "Yes, it is an emergency.": {
+                      "question": "Is this an emergency situation?",
+                      "options": [
+                        "Yes, it is an emergency.",
+                        "No, it is not an emergency."
+                      ],
+                      "callId": "cm2idpx4l00m511nz49f3xl8u",
+                      "children": {}
+                    },
+                    "No, it is not an emergency.": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2ids6ye00qpmqaido1pj4fg",
+                      "children": {}
+                    }
+                  }
+                },
+                "456 Elm Avenue": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2ibj3hb00odmqair224wysj",
+                  "children": {}
+                },
+                "789 Maple Drive": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2ibkbij00kf11nz059hrl1d",
+                  "children": {}
+                }
+              }
+            },
+            "Air Conditioning": {
+              "question": "Is this an emergency situation?",
+              "options": [
+                "Yes, it is an emergency",
+                "No, it is not an emergency"
+              ],
+              "callId": "cm2iai9r600jm11nzwtecf6sw",
+              "children": {
+                "Yes, it is an emergency": {
+                  "question": "Are you an existing customer?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2iblg3q00o4we1ypt1jrq6r",
+                  "children": {
+                    "Yes": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2idtcex00q4we1ys30ebjmo",
+                      "children": {}
+                    },
+                    "No": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2iduifa00md11nz4roct34t",
+                      "children": {}
+                    }
+                  }
+                },
+                "No, it is not an emergency": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Air Conditioning",
+                    "Plumbing",
+                    "Other"
+                  ],
+                  "callId": "cm2ibm7of00ofmqaip11x55bq",
+                  "children": {
+                    "Air Conditioning": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Air Conditioning",
+                        "Plumbing",
+                        "Heating"
+                      ],
+                      "callId": "cm2idvm7m00q6we1yimrnc29n",
+                      "children": {}
+                    },
+                    "Plumbing": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2idwvx000q8we1yrfy2nftk",
+                      "children": {}
+                    },
+                    "Other": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Plumbing",
+                        "Air conditioning",
+                        "Heating"
+                      ],
+                      "callId": "cm2idy90i00qrmqaiu04i1xtd",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "General Inquiry": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Plumbing issue",
+                "Air conditioning issue",
+                "Heating issue"
+              ],
+              "callId": "cm2iaj90900n2we1yvz89gnky",
+              "children": {
+                "Plumbing issue": {
+                  "question": "Is this an emergency?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2ibnite00kh11nzsilmoaek",
+                  "children": {
+                    "Yes": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2idzmte00mf11nzv65fsu9j",
+                      "children": {}
+                    },
+                    "No": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2ie1vk200qvmqaivsyxki7h",
+                      "children": {}
+                    }
+                  }
+                },
+                "Air conditioning issue": {
+                  "question": "Could you please let me know what kind of issue you are facing?",
+                  "options": [
+                    "Air conditioning issue",
+                    "Plumbing issue",
+                    "Heating issue"
+                  ],
+                  "callId": "cm2ibomrz00kj11nzsq1nntw6",
+                  "children": {
+                    "Air conditioning issue": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2ie30mt00qxmqaip6f45nbk",
+                      "children": {}
+                    },
+                    "Plumbing issue": {
+                      "question": "Is this an emergency situation?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2ie45fg00qzmqai7wfrbc2g",
+                      "children": {}
+                    },
+                    "Heating issue": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2ie584y00r1mqaigsyg5vrq",
+                      "children": {}
+                    }
+                  }
+                },
+                "Heating issue": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2ibpy3h00o6we1y4z9glckc",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "Scheduled maintenance": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Scheduled Maintenance",
+            "Repair",
+            "Installation"
+          ],
+          "callId": "cm2ia4nha00j811nzy1qvcsit",
+          "children": {
+            "Scheduled Maintenance": {
+              "question": "Is this regarding scheduled maintenance?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "callId": "cm2iakgff00jo11nzsr2zh6v1",
+              "children": {
+                "Yes": {
+                  "question": "Could you please let me know what kind of issue you are facing?",
+                  "options": [
+                    "Scheduled Maintenance",
+                    "Repair",
+                    "Installation"
+                  ],
+                  "callId": "cm2ibr6sq00ohmqaia2tpyp8l",
+                  "children": {
+                    "Scheduled Maintenance": {
+                      "question": "Could you please let me know what kind of issue you are facing?",
+                      "options": [
+                        "Scheduled maintenance",
+                        "Repair service",
+                        "Installation of new equipment"
+                      ],
+                      "callId": "cm2ie6gv000r3mqain7amkje0",
+                      "children": {}
+                    },
+                    "Repair": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2ie7ozb00qcwe1yskkmic6w",
+                      "children": {}
+                    },
+                    "Installation": {
+                      "question": "Could you please let me know what kind of issue you are facing?",
+                      "options": [
+                        "Scheduled maintenance",
+                        "Air conditioning malfunction",
+                        "Plumbing issue"
+                      ],
+                      "callId": "cm2ie7xzw00qewe1yt63ocfj0",
+                      "children": {}
+                    }
+                  }
+                },
+                "No": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2ibsja800ojmqaijd4rkqxi",
+                  "children": {}
+                }
+              }
+            },
+            "Repair": {
+              "question": "Is it related to your air conditioning or heating pump?",
+              "options": [
+                "Air conditioning",
+                "Heating pump",
+                "Both"
+              ],
+              "callId": "cm2ial5xi00jq11nzix5dwqwj",
+              "children": {
+                "Air conditioning": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Air Conditioning Not Cooling",
+                    "Heating Not Working",
+                    "Plumbing Leak"
+                  ],
+                  "callId": "cm2ibu03p00olmqaiyfsuu9q4",
+                  "children": {
+                    "Air Conditioning Not Cooling": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2ie9grv00ml11nzb6llc3qf",
+                      "children": {}
+                    },
+                    "Heating Not Working": {
+                      "question": "Just let me know whenever you're ready. I'm here to help.",
+                      "options": [
+                        "Installation or replacement",
+                        "Scheduled maintenance",
+                        "Repair or issue diagnosis"
+                      ],
+                      "callId": "cm2ieaq3w00qgwe1ycp17xl9f",
+                      "children": {}
+                    },
+                    "Plumbing Leak": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Emergency",
+                        "General Inquiry",
+                        "Scheduled Maintenance"
+                      ],
+                      "callId": "cm2ieca3400r5mqai9g72if2c",
+                      "children": {}
+                    }
+                  }
+                },
+                "Heating pump": {
+                  "question": "Is the issue related to your air conditioning or heating pump?",
+                  "options": [
+                    "Heating pump",
+                    "Air conditioning",
+                    "I'm not sure"
+                  ],
+                  "callId": "cm2ibv88o00onmqaibxcf0bof",
+                  "children": {
+                    "Heating pump": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2iedjmf00mn11nztk4e98xo",
+                      "children": {}
+                    },
+                    "Air conditioning": {
+                      "question": "Is the repair related to your air conditioning or heating pump?",
+                      "options": [
+                        "Air conditioning",
+                        "Heating pump",
+                        "Not sure"
+                      ],
+                      "callId": "cm2ieenr100mp11nz2nndjsq7",
+                      "children": {}
+                    },
+                    "I'm not sure": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Scheduled Maintenance",
+                        "Repair",
+                        "Installation",
+                        "Other"
+                      ],
+                      "callId": "cm2ieg4dk00r7mqai49quphjf",
+                      "children": {}
+                    }
+                  }
+                },
+                "Both": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Emergency repair",
+                    "Scheduled maintenance",
+                    "General inquiry"
+                  ],
+                  "callId": "cm2ibwtcb00kl11nzwwqt0d83",
+                  "children": {
+                    "Emergency repair": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2iehcby00qiwe1ysnonfmyt",
+                      "children": {}
+                    },
+                    "Scheduled maintenance": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Scheduled maintenance",
+                        "Repair",
+                        "Installation"
+                      ],
+                      "callId": "cm2ieii0900qkwe1ykju5kpgy",
+                      "children": {}
+                    },
+                    "General inquiry": {
+                      "question": "Could I please have your name and physical address?",
+                      "options": [
+                        "Name: Angela Iverson",
+                        "Address: 1234 Bay St, Oakland, CA 94105"
+                      ],
+                      "callId": "cm2iejps600r9mqaia22asaut",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "Installation": {
+              "question": "Is this an emergency?",
+              "options": [
+                "Yes",
+                "No, it's scheduled maintenance",
+                "I'm not sure"
+              ],
+              "callId": "cm2iameqc00nsmqaif11qcefa",
+              "children": {
+                "Yes": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2iby39p00kn11nzwbzk84vn",
+                  "children": {}
+                },
+                "No, it's scheduled maintenance": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2ibz5ea00obwe1yaibzpt77",
+                  "children": {}
+                },
+                "I'm not sure": {
+                  "question": "Is this an emergency?",
+                  "options": [
+                    "Yes",
+                    "No",
+                    "I'm not sure"
+                  ],
+                  "callId": "cm2ic06wj00odwe1yzqkojvof",
+                  "children": {
+                    "Yes": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2iekxis00qmwe1y0ldnorns",
+                      "children": {}
+                    },
+                    "No": {
+                      "question": "Could I please have your name?",
+                      "options": [
+                        "John Doe",
+                        "Jane Smith",
+                        "Chris Johnson"
+                      ],
+                      "callId": "cm2ielxi000qowe1ykubyv3i3",
+                      "children": {}
+                    },
+                    "I'm not sure": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2iemk1z00rbmqaixo3tdfh5",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "Other": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "HVAC",
+            "Plumbing",
+            "Electrical",
+            "Other"
+          ],
+          "callId": "cm2ia5xhx00mqwe1y3ko9ofya",
+          "children": {
+            "HVAC": {
+              "question": "",
+              "options": [],
+              "callId": "cm2iaou5j00n4we1ycc21bq88",
+              "children": {}
+            },
+            "Plumbing": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Plumbing",
+                "Air Conditioning",
+                "Not Sure"
+              ],
+              "callId": "cm2iapyur00n6we1yyb6hsylp",
+              "children": {
+                "Plumbing": {
+                  "question": "Is this an emergency situation?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2ic1hfr00ofwe1y2yqb5d49",
+                  "children": {
+                    "Yes": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2ienr3000mr11nzhcow5vsk",
+                      "children": {}
+                    },
+                    "No": {
+                      "question": "Is this an emergency situation?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2ieovh600mt11nzh2u767im",
+                      "children": {}
+                    }
+                  }
+                },
+                "Air Conditioning": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Air conditioning",
+                    "Plumbing",
+                    "Heating"
+                  ],
+                  "callId": "cm2ic2rru00ohwe1y23wc58pa",
+                  "children": {
+                    "Air conditioning": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Plumbing",
+                        "Air Conditioning",
+                        "Other"
+                      ],
+                      "callId": "cm2ieq4h800qvwe1yap2z28yt",
+                      "children": {}
+                    },
+                    "Plumbing": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Plumbing",
+                        "Air Conditioning",
+                        "Heating"
+                      ],
+                      "callId": "cm2ieri0n00mv11nzqr9nxeh9",
+                      "children": {}
+                    },
+                    "Heating": {
+                      "question": "",
+                      "options": [],
+                      "callId": "cm2iesmvi00mx11nzc09aatbf",
+                      "children": {}
+                    }
+                  }
+                },
+                "Not Sure": {
+                  "question": "Could you please provide a bit more detail about the problem?",
+                  "options": [
+                    "Is it related to the air conditioning system?",
+                    "Is it related to the plumbing?"
+                  ],
+                  "callId": "cm2ic4cvx00opmqai5ktg2az3",
+                  "children": {
+                    "Is it related to the air conditioning system?": {
+                      "question": "What kind of issue are you facing?",
+                      "options": [
+                        "Air conditioning problem",
+                        "Plumbing issue",
+                        "Other"
+                      ],
+                      "callId": "cm2ietv6600rdmqai9h5r4nkp",
+                      "children": {}
+                    },
+                    "Is it related to the plumbing?": {
+                      "question": "Is this an emergency?",
+                      "options": [
+                        "Yes",
+                        "No"
+                      ],
+                      "callId": "cm2iev2jx00rfmqaiznivu7fw",
+                      "children": {}
+                    }
+                  }
+                }
+              }
+            },
+            "Electrical": {
+              "question": "Is this an emergency?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "callId": "cm2iar7pk00js11nzcegixm8r",
+              "children": {
+                "Yes": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2ic5v5l00ormqaiwxu3trnc",
+                  "children": {}
+                },
+                "No": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Plumbing",
+                    "Heating",
+                    "Air conditioning"
+                  ],
+                  "callId": "cm2ic812300kp11nzn720p53f",
+                  "children": {}
+                }
+              }
+            },
+            "Other": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "No heating",
+                "Leaky faucet",
+                "Other buddy"
+              ],
+              "callId": "cm2iasazf00n8we1y7shi388r",
+              "children": {
+                "No heating": {
+                  "question": "Let me know what kind of issue you are facing?",
+                  "options": [
+                    "Plumbing Issue",
+                    "Air Conditioning Issue",
+                    "Other"
+                  ],
+                  "callId": "cm2ic973p00kr11nz5ohodk25",
+                  "children": {}
+                },
+                "Leaky faucet": {
+                  "question": "Is this an emergency situation?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2icamq400kt11nzhcqhocyb",
+                  "children": {}
+                },
+                "Other buddy": {
+                  "question": "Is this an emergency situation?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2icbw8w00ojwe1ye6w3xkdu",
+                  "children": {}
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "I'm not sure": {
+      "question": "Is this an emergency situation?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "callId": "cm2i9yldj00j611nz493b0z2s",
+      "children": {
+        "Yes": {
+          "question": "Is this an emergency situation?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2ia74ik00nemqai60p2nta6",
+          "children": {
+            "Yes": {
+              "question": "Is this an emergency?",
+              "options": [
+                "Yes",
+                "No"
+              ],
+              "callId": "cm2iatqc300ju11nz2xomdpl6",
+              "children": {
+                "Yes": {
+                  "question": "Is this an emergency?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2icd7yc00kv11nzd2n1z7q1",
+                  "children": {}
+                },
+                "No": {
+                  "question": "Is this an emergency situation?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2iceczk00olwe1yc6hsjbmq",
+                  "children": {}
+                }
+              }
+            },
+            "No": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Air conditioning not cooling",
+                "Plumbing leak",
+                "Heater malfunction",
+                "Other"
+              ],
+              "callId": "cm2iav35100nwmqaiac4ugjvi",
+              "children": {
+                "Air conditioning not cooling": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Air conditioning not cooling",
+                    "Strange noise from air conditioning",
+                    "Plumbing leak"
+                  ],
+                  "callId": "cm2icfips00kx11nzefrkyojb",
+                  "children": {}
+                },
+                "Plumbing leak": {
+                  "question": "Could you please let me know what kind of issue you are facing?",
+                  "options": [
+                    "Air conditioning problem",
+                    "Plumbing issue",
+                    "General inquiry"
+                  ],
+                  "callId": "cm2icgu1e00ovmqaiuno7ioxz",
+                  "children": {}
+                },
+                "Heater malfunction": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Heater malfunction",
+                    "Air conditioning issue",
+                    "Plumbing issue"
+                  ],
+                  "callId": "cm2ici7f400onwe1yqjcxi9t2",
+                  "children": {}
+                },
+                "Other": {
+                  "question": "Is this an emergency situation?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2icjjzi00oxmqai7r8z9wk1",
+                  "children": {}
+                }
+              }
+            }
+          }
+        },
+        "No": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Heating issue",
+            "Cooling issue",
+            "Plumbing issue",
+            "Other"
+          ],
+          "callId": "cm2ia8cnj00ngmqaiuvkzk3gy",
+          "children": {
+            "Heating issue": {
+              "question": "",
+              "options": [],
+              "callId": "cm2iaw86e00nymqai1sws3iqx",
+              "children": {}
+            },
+            "Cooling issue": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Cooling issue",
+                "Heating issue",
+                "Plumbing issue"
+              ],
+              "callId": "cm2iayp7s00jy11nzeugs394i",
+              "children": {
+                "Cooling issue": {
+                  "question": "Is this an emergency situation?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2ickvc400kz11nzvx9gmuxn",
+                  "children": {}
+                },
+                "Heating issue": {
+                  "question": "",
+                  "options": [],
+                  "callId": "cm2icmbs900l411nz6me5fznq",
+                  "children": {}
+                },
+                "Plumbing issue": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Heating Issue",
+                    "Cooling Issue",
+                    "Plumbing Issue"
+                  ],
+                  "callId": "cm2icnjo100l611nzjo06lgbq",
+                  "children": {}
+                }
+              }
+            },
+            "Plumbing issue": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Air conditioning issue",
+                "Plumbing issue",
+                "Heating issue"
+              ],
+              "callId": "cm2ib00ci00nawe1yh2h7txk5",
+              "children": {
+                "Air conditioning issue": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Air conditioning not working",
+                    "Plumbing leak",
+                    "Heater malfunction"
+                  ],
+                  "callId": "cm2icou7t00ozmqai4504izmb",
+                  "children": {}
+                },
+                "Plumbing issue": {
+                  "question": "What kind of issue are you facing?",
+                  "options": [
+                    "Plumbing issue",
+                    "Air conditioning issue",
+                    "Other"
+                  ],
+                  "callId": "cm2icq8br00l811nzknzau7vc",
+                  "children": {}
+                },
+                "Heating issue": {
+                  "question": "Is this an emergency?",
+                  "options": [
+                    "Yes",
+                    "No"
+                  ],
+                  "callId": "cm2icri3300pdmqaic7vz9wi2",
+                  "children": {}
+                }
+              }
+            },
+            "Other": {
+              "question": "",
+              "options": [],
+              "callId": "cm2ib18k700ncwe1yv0dz9ux6",
+              "children": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
