@@ -1,0 +1,94 @@
+{
+  "question": "Are you an existing customer with us?",
+  "options": [
+    "Yes",
+    "No",
+    "Unsure"
+  ],
+  "callId": "cm2k2ithb014s11nzrn7ltpe9",
+  "children": {
+    "Yes": {
+      "question": "Is this an emergency?",
+      "options": [
+        "Yes",
+        "No",
+        "I'm not sure"
+      ],
+      "callId": "cm2k2k2ym017kwe1yzbwggsvz",
+      "children": {
+        "Yes": {
+          "question": "Is this an emergency?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2k2nvas0198mqai2r4sen3k",
+          "children": {}
+        },
+        "No": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Need assistance with air conditioning unit",
+            "Need help with plumbing issue",
+            "Require maintenance service"
+          ],
+          "callId": "cm2k2ol5g015211nz19wl43hj",
+          "children": {}
+        },
+        "I'm not sure": {
+          "question": "Could you please describe the issue you're facing?",
+          "options": [
+            "I'm experiencing a leak in my pipe.",
+            "The air conditioning isn't cooling.",
+            "There's an issue with my water heater."
+          ],
+          "callId": "cm2k2peko015411nzz3dwr8g9",
+          "children": {}
+        }
+      }
+    },
+    "No": {
+      "question": "What kind of issue are you facing?",
+      "options": [
+        "Heating not working",
+        "Air conditioning failure",
+        "Leaky pipes",
+        "Other"
+      ],
+      "callId": "cm2k2l0el014u11nz73meus6w",
+      "children": {
+        "Heating not working": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Heating not working",
+            "Air conditioning not cooling",
+            "Plumbing leak",
+            "Other"
+          ],
+          "callId": "cm2k2qeqb015611nzhwtm0cpw",
+          "children": {}
+        },
+        "Air conditioning failure": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Air conditioning failure",
+            "Plumbing leak",
+            "Heating system malfunction"
+          ],
+          "callId": "cm2k2rpk7019amqai6lrdx3do",
+          "children": {}
+        }
+      }
+    },
+    "Unsure": {
+      "question": "Okay, if you find out more, feel free to call us back. Goodbye.",
+      "options": [
+        "Remember the issue and call back.",
+        "Identify the issue and seek help from others before calling back.",
+        "Visit the company's website for assistance before calling back."
+      ],
+      "callId": "cm2k2m9jo017mwe1ygjyokyqe",
+      "children": {}
+    }
+  }
+}

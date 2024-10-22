@@ -3,7 +3,6 @@ interface IVRNode {
   options: string[];
   callId: string;
   children: Map<string, IVRNode>;
-  isTerminal?: boolean;
 }
 
 export class IVRTree {
@@ -60,20 +59,11 @@ export class IVRTree {
     return currentNode;
   }
 
-  markNodeAsTerminal(path: string[]): void {
-    const node = this.getNode(path);
-    node.isTerminal = true;
-  }
-
   getNextUnexploredPath(): string[] | null {
     const queue: [IVRNode, string[]][] = [[this.root, []]];
 
     while (queue.length > 0) {
       const [node, path] = queue.shift()!;
-
-      if (node.isTerminal) {
-        continue;
-      }
 
       for (const option of node.options) {
         const newPath = [...path, option];
@@ -101,11 +91,7 @@ export class IVRTree {
 
   print(): void {
     const printNode = (node: IVRNode, indent: string = '') => {
-      console.log(
-        `${indent}Question: ${node.question}${
-          node.isTerminal ? ' (TERMINAL)' : ''
-        }`,
-      );
+      console.log(`${indent}Question: ${node.question}`);
       console.log(`${indent}Options: ${node.options.join(', ')}`);
       node.children.forEach((child, option) => {
         console.log(`${indent}  ${option}:`);

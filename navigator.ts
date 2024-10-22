@@ -57,7 +57,7 @@ ${steps.join('\n')}
 
 General guidance:
 - Be patient, and succinct.
-- Do not diverge from the questions you know the answers to. The goal is to get to the end state, so if you need to navigate on your own, act within reason.
+- Do not diverge from the questions you know the answers to. If you don't know the answer to a question, say "goodbye"
 - If the agent want to terminate the call, say "goodbye"`
       : rootPrompt;
 
