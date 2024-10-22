@@ -6,13 +6,20 @@ export class IVRNavigator {
   private phoneNumber: string;
   private tree: IVRTree;
   private currentPath: string[];
+  public agentPrePrompt: string;
 
-  constructor(webhookUrl: string, hammingApiKey: string, phoneNumber: string) {
+  constructor(
+    webhookUrl: string,
+    hammingApiKey: string,
+    phoneNumber: string,
+    agentPrePrompt: string,
+  ) {
     this.webhookUrl = webhookUrl;
     this.phoneNumber = phoneNumber;
     this.hammingApiKey = hammingApiKey;
     this.tree = new IVRTree();
     this.currentPath = [];
+    this.agentPrePrompt = agentPrePrompt;
   }
 
   async start() {
@@ -49,7 +56,7 @@ export class IVRNavigator {
     - As soon as you complete the provided steps, terminate the call`;
 
     const prompt = steps.length
-      ? `Your name is Angela Iverson - 1234 Bay Street Oakland, CA 94105.
+      ? `${this.agentPrePrompt}
 
 Here are the questions you know the answers to:
 
@@ -125,6 +132,7 @@ General guidance:
     result: {
       question: string;
       options: string[];
+      outcome: string;
     },
     callId: string,
   ) {
@@ -132,6 +140,7 @@ General guidance:
       this.currentPath,
       result.question,
       result.options,
+      result.outcome,
       callId,
     );
     console.log('Updated IVR tree:');

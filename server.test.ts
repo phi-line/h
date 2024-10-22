@@ -3,6 +3,8 @@ import { assertEquals } from '@std/assert';
 const serverUrl = 'http://localhost:8000';
 
 Deno.test('Navigate Endpoint Test', async () => {
+  const agentPrePrompt = `Your name is Angela Iverson - 1234 Bay Street Oakland, CA 94105.`;
+
   const navigateResponse = await fetch(`${serverUrl}/navigate`, {
     method: 'POST',
     headers: {
@@ -10,6 +12,7 @@ Deno.test('Navigate Endpoint Test', async () => {
     },
     body: JSON.stringify({
       phoneNumber: '+14153580761',
+      agentPrePrompt,
     }),
   });
 

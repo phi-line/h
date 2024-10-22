@@ -1,0 +1,222 @@
+{
+  "question": "Are you an existing customer with us?",
+  "options": [
+    "Yes, I am an existing customer.",
+    "No, I am a new customer.",
+    "I'm not sure; I want to check my records."
+  ],
+  "callId": "cm2k2u22z017uwe1yptb33pvj",
+  "children": {
+    "Yes, I am an existing customer.": {
+      "question": "Is this an emergency?",
+      "options": [
+        "Yes, it is an emergency.",
+        "No, it is not an emergency.",
+        "I am not sure, can you provide more details?"
+      ],
+      "callId": "cm2k2vc3j019emqaitctrbm2q",
+      "children": {
+        "Yes, it is an emergency.": {
+          "question": "",
+          "options": [],
+          "callId": "cm2k356r7019kmqaiwa9ptl8d",
+          "children": {}
+        },
+        "No, it is not an emergency.": {
+          "question": "what kind of ish",
+          "options": [
+            "Explain your issue",
+            "Mention if it's a maintenance request",
+            "Ask about billing issues"
+          ],
+          "callId": "cm2k360u1019mmqaiyrbttv74",
+          "children": {
+            "Explain your issue": {
+              "question": "Could you please specify if it's one of these issues?",
+              "options": [
+                "Yes, it's related to air conditioning.",
+                "Yes, it's related to a heating pump.",
+                "No, it's neither related to air conditioning nor a heating pump."
+              ],
+              "callId": "cm2k3d49k015k11nzb7koxv9r",
+              "children": {}
+            },
+            "Mention if it's a maintenance request": {
+              "question": "Could you please let me know what kind of issue you are facing?",
+              "options": [
+                "It's a plumbing issue.",
+                "It's an air conditioning problem.",
+                "It's a maintenance request."
+              ],
+              "callId": "cm2k3ec1b018pwe1ycmoj9az0",
+              "children": {}
+            },
+            "Ask about billing issues": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "My air conditioning is not cooling",
+                "There is a leak in my plumbing",
+                "My heating system is malfunctioning"
+              ],
+              "callId": "cm2k3i7d6015o11nzeofcf0bs",
+              "children": {}
+            }
+          }
+        },
+        "I am not sure, can you provide more details?": {
+          "question": "Is there an urgent issue that needs immediate attention like a major leak or complete system failure?",
+          "options": [
+            "Yes, there's a major leak.",
+            "No, it's not that urgent.",
+            "I'm not sure, I need a technician to determine the severity of the issue."
+          ],
+          "callId": "cm2k36xa00184we1yhww4kfr3",
+          "children": {
+            "Yes, there's a major leak.": {
+              "question": "Great, is this an emergency?",
+              "options": [
+                "Yes, it is an emergency.",
+                "No, it is not an emergency.",
+                "I'm not sure, it might be."
+              ],
+              "callId": "cm2k3pxe7015w11nzedbgu9ff",
+              "children": {}
+            },
+            "No, it's not that urgent.": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Heating problem",
+                "Cooling issue",
+                "Plumbing concern"
+              ],
+              "callId": "cm2k3qyq2015y11nz36fnnoju",
+              "children": {}
+            },
+            "I'm not sure, I need a technician to determine the severity of the issue.": {
+              "question": "What kind of issue are you facing?",
+              "options": [
+                "Heating issue",
+                "Cooling issue",
+                "Plumbing issue",
+                "Other"
+              ],
+              "callId": "cm2k3ryav01a6mqaie30w8j7h",
+              "children": {}
+            }
+          }
+        }
+      }
+    },
+    "No, I am a new customer.": {
+      "question": "Is this an emergency situation?",
+      "options": [
+        "Yes, it is an emergency.",
+        "No, it is not an emergency.",
+        "I'm not sure if it's an emergency."
+      ],
+      "callId": "cm2k2vxoc019gmqaizfzlz2jc",
+      "children": {
+        "Yes, it is an emergency.": {
+          "question": "Could I",
+          "options": [
+            "Ask for your contact information to schedule a service?",
+            "Assist you with setting up an account?",
+            "Help you with service details?"
+          ],
+          "callId": "cm2k37xx2015g11nza8sutm4k",
+          "children": {
+            "Ask for your contact information to schedule a service?": {
+              "question": "Could I please have your name and physical address?",
+              "options": [
+                "[Your Name]",
+                "[Your Physical Address]"
+              ],
+              "callId": "cm2k3vjv4016011nziw0nhmsn",
+              "children": {}
+            },
+            "Assist you with setting up an account?": {
+              "question": "Could I have your name and physical address please?",
+              "options": [
+                "John Doe, 123 Main St, Springfield",
+                "Jane Smith, 456 Elm St, Rivertown",
+                "Michael Johnson, 789 Oak Ave, Mapleville"
+              ],
+              "callId": "cm2k3w936016211nzuahu4zgy",
+              "children": {}
+            },
+            "Help you with service details?": {
+              "question": "May I have your name and physical address, please?",
+              "options": [
+                "[Customer's Name]",
+                "[Customer's Physical Address]",
+                "[Customer's Name and Physical Address]"
+              ],
+              "callId": "cm2k3x2f701aamqai0p4hlmj2",
+              "children": {}
+            }
+          }
+        },
+        "No, it is not an emergency.": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Heating system is not working",
+            "Plumbing leak in the kitchen",
+            "Air conditioning is making noise"
+          ],
+          "callId": "cm2k38p9p0189we1yrfoenrb8",
+          "children": {}
+        },
+        "I'm not sure if it's an emergency.": {
+          "question": "could you tell me what kind of issue you're facing",
+          "options": [
+            "I have a leaking pipe",
+            "My air conditioner is not cooling",
+            "There's a strange noise coming from my furnace"
+          ],
+          "callId": "cm2k39z5y018bwe1yu3wtdmzj",
+          "children": {}
+        }
+      }
+    },
+    "I'm not sure; I want to check my records.": {
+      "question": "Are you an existing customer?",
+      "options": [
+        "Yes",
+        "No",
+        "I am not sure"
+      ],
+      "callId": "cm2k2yvo1015811nzqd2l2035",
+      "children": {
+        "Yes": {
+          "question": "Is this an emergency?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2k3b7dy015i11nz55qkidp2",
+          "children": {}
+        },
+        "No": {
+          "question": "May I have your name and physical address, please?",
+          "options": [
+            "John Doe, 123 Main Street, Springfield",
+            "Jane Smith, 456 Elm Street, Shelbyville",
+            "Michael Johnson, 789 Oak Avenue, Capital City"
+          ],
+          "callId": "cm2k3buaw019omqai1k6mp5wx",
+          "children": {}
+        },
+        "I am not sure": {
+          "question": "Could I have your name and physical address to check for you?",
+          "options": [
+            "Yes, my name is [Your Name] and my address is [Your Address].",
+            "I would prefer not to give my address over the phone.",
+            "I am not comfortable sharing this information at the moment."
+          ],
+          "callId": "cm2k3cf51019qmqaiodjh7dxa",
+          "children": {}
+        }
+      }
+    }
+  }
+}

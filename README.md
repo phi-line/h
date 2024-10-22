@@ -93,6 +93,8 @@ Options: Yes, No
 
 While the main flow of the search was present, there were a few issues with the recordings as I was listening back to them. Our agents started to hallucinate more. It would interrupt frequently, leading to flakiness in the next results. I went back to the drawing board on various prompt alternatives to try and produce predictable results. I also ran into a case where the two agents were in a loop, both trying to end the call, but still awaiting each other's responses. I began searching for thr right prompt that would have the highest cohesion to the goal.
 
+To aid with this prompt engineering, I thought it would be helpful if the decisions could be supplied with the text transcript. I leveraged the deepgram API's voice utterances to get a back and forth diorized transcript between IVR agent and our agent.
+
 # Setup
 
 ## Configure .env

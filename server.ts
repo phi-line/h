@@ -30,6 +30,7 @@ interface RecordingWebhookRequest {
 
 interface NavigateRequest {
   phoneNumber: string;
+  agentPrePrompt: string;
 }
 
 async function router(req: Request): Promise<Response> {
@@ -37,7 +38,7 @@ async function router(req: Request): Promise<Response> {
 
   if (url.pathname === '/navigate' && req.method === 'POST') {
     const body = (await req.json()) as NavigateRequest;
-    const { phoneNumber } = body;
+    const { phoneNumber, agentPrePrompt } = body;
 
     if (!phoneNumber) {
       return new Response('Missing phoneNumber', {
@@ -45,7 +46,12 @@ async function router(req: Request): Promise<Response> {
       });
     }
 
-    navigator = new IVRNavigator(WEBHOOK_URL!, HAMMING_API_KEY!, phoneNumber);
+    navigator = new IVRNavigator(
+      WEBHOOK_URL!,
+      HAMMING_API_KEY!,
+      phoneNumber,
+      agentPrePrompt,
+    );
     navigator.start().catch(console.error);
 
     return new Response('IVR navigation started', { status: 200 });
@@ -71,7 +77,10 @@ async function router(req: Request): Promise<Response> {
             break;
           }
 
-          const inferenceResult = await analyzeAudioRecording(audioFilePath);
+          const inferenceResult = await analyzeAudioRecording(
+            audioFilePath,
+            navigator.agentPrePrompt,
+          );
           console.log('Got inference result', inferenceResult);
 
           if (inferenceResult) {

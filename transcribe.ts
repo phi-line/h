@@ -3,7 +3,7 @@ import { walk } from '@std/fs/walk';
 
 const DEEPGRAM_API_KEY = Deno.env.get('DEEPGRAM_API_KEY');
 
-interface Utterance {
+export interface Utterance {
   start: number;
   end: number;
   confidence: number;
@@ -18,7 +18,7 @@ interface Utterance {
   id: string;
 }
 
-type DeepgramResponse = {
+export type DeepgramResponse = {
   metadata: {
     transaction_key: string;
     request_id: string;
@@ -52,7 +52,7 @@ type DeepgramResponse = {
   };
 };
 
-async function getTranscriptionFromDeepgram(
+export async function getTranscriptionFromDeepgram(
   audioFilePath: string,
 ): Promise<DeepgramResponse> {
   const audioFile = await Deno.readFile(audioFilePath);
