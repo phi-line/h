@@ -1,7 +1,6 @@
 interface IVRNode {
   question: string;
   options: string[];
-  outcome: string;
   callId: string;
   children: Map<string, IVRNode>;
 }
@@ -14,7 +13,6 @@ export class IVRTree {
     this.root = {
       question: 'root',
       options: [],
-      outcome: '',
       callId: '',
       children: new Map(),
     };
@@ -25,7 +23,6 @@ export class IVRTree {
     path: string[],
     question: string,
     options: string[],
-    outcome: string,
     callId: string,
   ): void {
     let currentNode = this.root;
@@ -35,7 +32,6 @@ export class IVRTree {
         currentNode.children.set(option, {
           question: '',
           options: [],
-          outcome: '',
           callId: '',
           children: new Map(),
         });
@@ -45,7 +41,6 @@ export class IVRTree {
 
     currentNode.question = question;
     currentNode.options = options;
-    currentNode.outcome = outcome;
     currentNode.callId = callId;
 
     this.exploredPaths.add(this.pathToString(path, question));
@@ -98,7 +93,6 @@ export class IVRTree {
     const printNode = (node: IVRNode, indent: string = '') => {
       console.log(`${indent}Question: ${node.question}`);
       console.log(`${indent}Options: ${node.options.join(', ')}`);
-      console.log(`${indent}Outcome: ${node.outcome}`);
       node.children.forEach((child, option) => {
         console.log(`${indent}  ${option}:`);
         printNode(child, indent + '    ');

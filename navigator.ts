@@ -132,7 +132,6 @@ General guidance:
     result: {
       question: string;
       options: string[];
-      outcome: string;
     },
     callId: string,
   ) {
@@ -140,7 +139,6 @@ General guidance:
       this.currentPath,
       result.question,
       result.options,
-      result.outcome,
       callId,
     );
     console.log('Updated IVR tree:');

@@ -1,7 +1,7 @@
 import '@std/dotenv/load';
 import openai from 'npm:openai@4.68.1';
 import { DOMParser, Element } from 'jsr:@b-fuze/deno-dom';
-// import { encodeBase64 } from '@std/encoding/base64';
+import { encodeBase64 } from '@std/encoding/base64';
 import { Utterance, getTranscriptionFromDeepgram } from './transcribe.ts';
 
 function generateScriptFromUtterances(utterances: Utterance[]): string {
@@ -18,26 +18,24 @@ function generateScriptFromUtterances(utterances: Utterance[]): string {
 
 function createInferencePrompt(memory: string): string {
   return `Your Memory:
--  ${memory}
-
-Goal:
-- Your first goal is to identify the last unanswered question asked by the IVR phone line. If the <customer> responded, We shouldn't count it and return an empty <res> block. If there is an <outcome> response with an empty <res> block
-- Your second goal should be to generate the possible answers to that question if we haven't already answered it. If the answer is free-form, try to use the overall context of the call to think of some options. If it asks for information, be sure to leverage "Your Memory"
-- Your third goal should be to identify any terminal states for the call. If the agent hangs up, we should know about this, return an empty <res> block, but return an <outcome></outcome> block that contains the final thing that the agent did or instructed.
-- The output should be the question, followed by two or more XML bounded options <res> <ques></ques> <opt>Option 1</opt> <opt>Option 2</opt> <opt>Option 3</opt> </res> <outcome></outcome>
-
-General guidance:
-- Be as concise as possible. Don't repeat the question back
-- Always try to give a definite answer to a "Yes" or "No" question. Avoid "I don't know" or other flimsy responses like "Not sure".
-- If nothing happened, simply return an empty <res> block.
-- If the agent and the customer already answered the last question, return an empty <res> block but fill out the <outcome> block.
-- Format your result as a series of XML tags <res> <ques></ques> <opt></opt> <opt></opt> </res> <outcome></outcome>`;
+  -  ${memory}
+  
+  Goal:
+  - Your first goal is to identify the last unanswered question asked by the IVR phone line. If the <customer> responded, We shouldn't count it and return an empty <res> block
+  - Your second goal should be to generate the possible answers to that question. If the answer is free-form, try to use the overall context of the call to think of some options. If it asks for information, be sure to leverage "Your Memory"
+  - The output should be the question, followed by two or more XML bounded options <res> <ques></ques> <opt>Option 1</opt> <opt>Option 2</opt> <opt>Option 3</opt> </res>
+  
+  General guidance:
+  - Be as concise as possible.
+  - Always try to give a definite answer to a "yes" or "no" question. Avoid "I don't know" or other flimsy responses.
+  - If nothing happened, simply return an empty <res> block.
+  - If the agent and the customer had a full conversation, return an empty <res> block
+  - Format your result as a series of XML tags <res> <ques></ques> <opt></opt> <opt></opt> </res>`;
 }
 
 interface parsedInference {
   question: string;
   options: string[];
-  outcome: string;
 }
 
 function parseXmlToJson(xmlString: string): parsedInference | null {
@@ -58,9 +56,6 @@ function parseXmlToJson(xmlString: string): parsedInference | null {
 
   if (!questionElement) return null;
 
-  const outcomeElement = xmlDoc.querySelector('outcome');
-  const outcome = outcomeElement?.textContent || '';
-
   const question = questionElement.textContent || '';
   const options = Array.from(optionElements)
     .map((el) => (el as Element).textContent || '')
@@ -69,7 +64,6 @@ function parseXmlToJson(xmlString: string): parsedInference | null {
   return {
     question,
     options,
-    outcome,
   };
 }
 
@@ -92,12 +86,12 @@ export async function analyzeAudioRecording(
 
   const client = new openai.OpenAI();
 
-  //   const audioFile = await Deno.readFile(audioFilePath);
-  //   const base64str = encodeBase64(audioFile);
+  const audioFile = await Deno.readFile(audioFilePath);
+  const base64str = encodeBase64(audioFile);
 
   const response = await client.chat.completions.create({
-    // model: 'gpt-4o-audio-preview',
-    model: 'gpt-4o-2024-08-06',
+    model: 'gpt-4o-audio-preview',
+    // model: 'gpt-4o-2024-08-06',
     modalities: ['text'],
     messages: [
       {
@@ -107,10 +101,10 @@ export async function analyzeAudioRecording(
             type: 'text',
             text: prompt,
           },
-          //   {
-          //     type: 'input_audio',
-          //     input_audio: { data: base64str, format: 'wav' },
-          //   },
+          {
+            type: 'input_audio',
+            input_audio: { data: base64str, format: 'wav' },
+          },
         ],
       },
     ],

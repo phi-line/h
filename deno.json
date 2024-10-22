@@ -3,7 +3,7 @@
     "dev": "deno run --allow-env --allow-read --allow-write --allow-net --watch server.ts",
     "server": "deno run --allow-env --allow-read --allow-write --allow-net server.ts",
     "completions": "deno run --allow-env --allow-read --allow-net inference.ts",
-    "generate": "deno run --allow-env --allow-read --allow-write --allow-net graph.ts",
+    "generate": "deno run --allow-env --allow-read --allow-write --allow-net transcribe.ts",
     "discover": "deno test --allow-net"
   },
   "imports": {

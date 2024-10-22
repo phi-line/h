@@ -81,15 +81,15 @@ async function main() {
     let results: { [key: string]: DeepgramResponse } = {};
 
     try {
-      const fileInfo = Deno.statSync('graph/run3.json');
+      const fileInfo = Deno.statSync(`utterances/dataset.json`);
       if (fileInfo.isFile) {
-        const data = Deno.readFileSync('graph/run3.json');
+        const data = Deno.readFileSync(`utterances/dataset.json`);
         results = JSON.parse(new TextDecoder().decode(data));
-        console.log('Results loaded from graph/run3.json');
+        console.log(`Results loaded from utterances/dataset.json`);
       }
     } catch (error) {
       if (error instanceof Deno.errors.NotFound) {
-        for await (const entry of walk('snippets/run3')) {
+        for await (const entry of walk(`snippets`)) {
           if (entry.isFile && entry.name.endsWith('.wav')) {
             const audioFilePath = entry.path;
             console.log(audioFilePath);
@@ -101,12 +101,12 @@ async function main() {
           }
         }
         const resultsJson = JSON.stringify(results, null, 2);
-        Deno.mkdirSync('graph', { recursive: true });
+        Deno.mkdirSync('utterances', { recursive: true });
         Deno.writeFileSync(
-          'graph/run3.json',
+          `utterances/dataset.json`,
           new TextEncoder().encode(resultsJson),
         );
-        console.log('Results saved to graph/run3.json');
+        console.log(`Results saved to utterances/dataset.json`);
       } else {
         throw error;
       }

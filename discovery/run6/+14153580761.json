@@ -4,19 +4,67 @@
     "Yes",
     "No"
   ],
-  "outcome": "",
-  "callId": "cm2k402bl016411nzha9hxi0k",
+  "callId": "cm2k6ts5g01bmwe1ymayx592t",
   "children": {
     "Yes": {
       "question": "Is this an emergency?",
       "options": [
-        "Yes",
-        "No",
-        "Not sure"
+        "Yes, it is an emergency.",
+        "No, it is not an emergency.",
+        "I am not sure, but I need assistance with a plumbing issue."
       ],
-      "outcome": "",
-      "callId": "cm2k42d540199we1y1lx0aqu2",
-      "children": {}
+      "callId": "cm2k6v4cn01bowe1yjf7k4opu",
+      "children": {
+        "Yes, it is an emergency.": {
+          "question": "Is this an emergency?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2k77s9i01a311nzrytpoe0g",
+          "children": {
+            "Yes": {
+              "question": "is this an emergency situation",
+              "options": [
+                "yes",
+                "no"
+              ],
+              "callId": "cm2k7lp8701cmwe1yzbbe5hrg",
+              "children": {}
+            },
+            "No": {
+              "question": "Could you please let me know what kind of issue you are facing?",
+              "options": [
+                "I am facing a plumbing issue.",
+                "There is a leak in my bathroom.",
+                "My kitchen sink is clogged."
+              ],
+              "callId": "cm2k7mimc01aj11nznx27uamr",
+              "children": {}
+            }
+          }
+        },
+        "No, it is not an emergency.": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "I have a leak in the bathroom.",
+            "I am facing a clog in the kitchen sink.",
+            "There is low water pressure in the shower."
+          ],
+          "callId": "cm2k78h1101ccwe1ye8sv26ln",
+          "children": {}
+        },
+        "I am not sure, but I need assistance with a plumbing issue.": {
+          "question": "hello",
+          "options": [
+            "Yes, I'm here.",
+            "Hello, Olivia.",
+            "Can you hear me?"
+          ],
+          "callId": "cm2k79y8k01cewe1ycgd2yj3y",
+          "children": {}
+        }
+      }
     },
     "No": {
       "question": "Is this an emergency situation?",
@@ -25,9 +73,38 @@
         "No",
         "I'm not sure"
       ],
-      "outcome": "",
-      "callId": "cm2k42z57019bwe1y2h7orv9u",
-      "children": {}
+      "callId": "cm2k6vp1z019g11nzian7i1bi",
+      "children": {
+        "Yes": {
+          "question": "Is this an emergency?",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "callId": "cm2k7ctnj01ciwe1ylhbqwv8i",
+          "children": {}
+        },
+        "No": {
+          "question": "What kind of issue are you facing?",
+          "options": [
+            "Leaky faucet",
+            "Clogged drain",
+            "Water heater problem"
+          ],
+          "callId": "cm2k7dvt201a711nzsxms1f3w",
+          "children": {}
+        },
+        "I'm not sure": {
+          "question": "Could you please describe the issue you're facing?",
+          "options": [
+            "I have a leaking faucet.",
+            "There's a blockage in my sink.",
+            "One of my pipes is making strange noises."
+          ],
+          "callId": "cm2k7exo001a911nzjyibgu3a",
+          "children": {}
+        }
+      }
     }
   }
 }
